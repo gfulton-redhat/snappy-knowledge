@@ -1,0 +1,31 @@
+# permissions for end users to edit snappyknowledges.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: snappyknowledge-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: snappy-knowledge
+    app.kubernetes.io/part-of: snappy-knowledge
+    app.kubernetes.io/managed-by: kustomize
+  name: snappyknowledge-editor-role
+rules:
+- apiGroups:
+  - knowledge.example.com
+  resources:
+  - snappyknowledges
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - knowledge.example.com
+  resources:
+  - snappyknowledges/status
+  verbs:
+  - get

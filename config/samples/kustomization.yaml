@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- knowledge_v1_snappyknowledge.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
